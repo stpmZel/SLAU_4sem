@@ -4,5 +4,6 @@ project(SLAU_LIB)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(SLAU_LIB main.cpp )
+add_subdirectory(pass_method_lib_test)
 
 
