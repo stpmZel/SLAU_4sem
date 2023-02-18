@@ -7,4 +7,4 @@ set(CMAKE_CXX_STANDARD 23)
 add_compile_options(-Wall -Werror)
 
 file(GLOB_RECURSE source *.h)
-add_library(SLAU_LIB INTERFACE libB.cpp)
+add_library(SLAU_LIB INTERFACE ${source})
