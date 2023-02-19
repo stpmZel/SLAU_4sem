@@ -20,8 +20,12 @@ class triple_diag_matrix {
 public:
     triple_diag_matrix(const std::vector<triple<T>>& b);
 
-    const std::vector<triple<T>> &getBody() const{
-        return body;}
+    const triple<T> &getStr(int i) const{
+        return body[i];}
+
+    [[nodiscard]] int getSize() const{
+        return body.size();
+    }
 
 private:
     std::vector<triple<T>> body;
@@ -34,21 +38,21 @@ private:
 template<typename T>
 
 std::vector<T> passage_method(const triple_diag_matrix<T>& matrix,const std::vector<T>& d){
-    std::vector<std::pair<T,T>> pq(matrix.getBody().size());
+    std::vector<std::pair<T,T>> pq(matrix.getSize());
 
 
-    pq[0].first = -matrix.getBody()[0].c/matrix.getBody()[0].b;
-    pq[0].second = d[0]/matrix.getBody()[0].b;
-    for(int i = 1;i < matrix.getBody().size()-1;i++){
-        pq[i].first = - matrix.getBody()[i].c / (matrix.getBody()[i].a * pq[i-1].first + matrix.getBody()[i].b);
-        pq[i].second = (d[i] - matrix.getBody()[i].a * pq[i-1].second)/
-                (matrix.getBody()[i].a*pq[i-1].first + matrix.getBody()[i].b);
+    pq[0].first = -matrix.getStr(0).c/matrix.getStr(0).b;
+    pq[0].second = d[0]/matrix.getStr(0).b;
+    for(int i = 1;i < matrix.getSize()-1;i++){
+        pq[i].first = - matrix.getStr(i).c / (matrix.getStr(i).a * pq[i-1].first + matrix.getStr(i).b);
+        pq[i].second = (d[i] - matrix.getStr(i).a * pq[i-1].second)/
+                (matrix.getStr(i).a*pq[i-1].first + matrix.getStr(i).b);
     }
-    pq[matrix.getBody().size()-1].first = 0;
-    pq[matrix.getBody().size()-1].second = (d[matrix.getBody().size()-1] - matrix.getBody()[matrix.getBody().size()-1].a*
-            pq[matrix.getBody().size()-2].second)/
-                                      (matrix.getBody()[matrix.getBody().size()-1].a*
-                                      pq[matrix.getBody().size()-2].first + matrix.getBody()[matrix.getBody().size()-1].b);
+    pq[matrix.getSize()-1].first = 0;
+    pq[matrix.getSize()-1].second = (d[matrix.getSize()-1] - matrix.getStr(matrix.getSize()-1).a*
+            pq[matrix.getSize()-2].second)/
+                                      (matrix.getStr(matrix.getSize()-1).a*
+                                      pq[matrix.getSize()-2].first + matrix.getStr(matrix.getSize()-1).b);
 
     std::vector<T> x(pq.size());
     x[pq.size()-1] = pq[pq.size()-1].second;

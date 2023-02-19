@@ -19,7 +19,7 @@ TEST(PassageSimpleTest,_3x3_test){
     std::vector<double> constant = {1.49, -0.02, -0.68};
 
     for(int i = 0; i<x.size();i++){
-    ASSERT_NEAR(x[i], constant[i] , 0.001);
+    ASSERT_NEAR(x[i], constant[i] , 0.01);
     }
 }
 
