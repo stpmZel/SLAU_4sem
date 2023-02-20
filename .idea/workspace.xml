@@ -11,7 +11,8 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="SLAU_LIB" targetName="test_1" />
+      <config projectName="SLAU_LIB" targetName="CSR_matrix_test" />
+      <config projectName="SLAU_LIB" targetName="pass_method_lib_test" />
       <config projectName="SLAU_LIB" targetName="gtest_main" />
       <config projectName="SLAU_LIB" targetName="SLAU_LIB" />
       <config projectName="SLAU_LIB" targetName="gmock" />
@@ -25,10 +26,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="3">
+    <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CSR_matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSR_matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pass_method_lib.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/pass_method_lib.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/pass_method_lib_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/pass_method_lib_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.test_1">
+  <component name="RunManager" selected="Google Test.CSR_matrix_test">
     <configuration name="All in pass_method_lib_test.cc" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="SLAU_LIB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="SLAU_LIB" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/pass_method_lib_test/pass_method_lib_test.cc)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -111,13 +113,13 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PassageSimpleTest._3x3_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="pass_method_lib_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="pass_method_lib_test" TEST_CLASS="PassageSimpleTest" TEST_METHOD="_3x3_test" TEST_MODE="SUITE_TEST">
+    <configuration name="CSR_matrix_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="CSR_matrix_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="CSR_matrix_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_1" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="test_1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="test_1" TEST_MODE="SUITE_TEST">
+    <configuration name="PassageSimpleTest._3x3_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="pass_method_lib_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="pass_method_lib_test" TEST_CLASS="PassageSimpleTest" TEST_METHOD="_3x3_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -157,9 +159,9 @@
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CMake Debug.SLAU_LIB" />
+      <item itemvalue="Google Test.CSR_matrix_test" />
       <item itemvalue="Google Test.All in pass_method_lib_test.cpp (1)" />
       <item itemvalue="Google Test.PassageSimpleTest._3x3_test" />
-      <item itemvalue="Google Test.test_1" />
       <item itemvalue="Google Test.All in pass_method_lib_test.cc" />
       <item itemvalue="Google Test.All in pass_method_lib_test.cpp" />
     </list>
@@ -189,7 +191,7 @@
       <workItem from="1676758649851" duration="178000" />
       <workItem from="1676758849635" duration="139000" />
       <workItem from="1676759231490" duration="2869000" />
-      <workItem from="1676813600149" duration="2439000" />
+      <workItem from="1676813600149" duration="20584000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1675900410687</created>
@@ -219,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676760691724</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="4">
+      <created>1676822145032</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676822145032</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +278,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2" />
     <MESSAGE value="3" />
-    <option name="LAST_COMMIT_MESSAGE" value="3" />
+    <MESSAGE value="4" />
+    <option name="LAST_COMMIT_MESSAGE" value="4" />
   </component>
 </project>

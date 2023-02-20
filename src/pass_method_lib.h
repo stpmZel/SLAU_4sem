@@ -8,6 +8,8 @@
 
 #include <vector>
 
+
+
 template<typename T>
 struct triple{
     T a;
@@ -20,7 +22,7 @@ class triple_diag_matrix {
 public:
     triple_diag_matrix(const std::vector<triple<T>>& b);
 
-    const triple<T> &getStr(int i) const{
+    [[nodiscard]] const triple<T> &getStr(int i) const{
         return body[i];}
 
     [[nodiscard]] int getSize() const{

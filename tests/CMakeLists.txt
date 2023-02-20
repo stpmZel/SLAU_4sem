@@ -3,9 +3,14 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 add_subdirectory(Google_tests/lib)
 
 
-add_executable(test_1 pass_method_lib_test.cpp)
-add_test(test_1 COMMAND pass_method_lib_test.cpp)
-target_link_libraries(test_1 gtest gtest_main)
+file(GLOB tests "*.cpp")
+
+foreach(item ${tests})
+    get_filename_component(ItName ${item} NAME_WE)
+    add_executable("${ItName}" ${item})
+    add_test(NAME "${ItName}" COMMAND ${item})
+    target_link_libraries(${ItName} SLAU_LIB gtest gtest_main)
+endforeach()
 
 
 
