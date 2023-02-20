@@ -26,12 +26,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSR_matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSR_matrix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pass_method_lib.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/pass_method_lib.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CMakeLists.txt" afterDir="false" />
-    </list>
+    <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +186,7 @@
       <workItem from="1676758649851" duration="178000" />
       <workItem from="1676758849635" duration="139000" />
       <workItem from="1676759231490" duration="2869000" />
-      <workItem from="1676813600149" duration="20584000" />
+      <workItem from="1676813600149" duration="20798000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1675900410687</created>
@@ -228,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676822145032</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="5">
+      <created>1676933410347</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676933410347</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +281,7 @@
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="4" />
-    <option name="LAST_COMMIT_MESSAGE" value="4" />
+    <MESSAGE value="5" />
+    <option name="LAST_COMMIT_MESSAGE" value="5" />
   </component>
 </project>
