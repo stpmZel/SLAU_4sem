@@ -90,9 +90,6 @@ T csr_matrix<T>::operator()(int i,int j){
 
 template<typename T>
 std::vector<T> csr_matrix<T>::operator*(const std::vector<T> &b){
-    if(b.size() != width) {
-        throw std::logic_error("size of matrix != vector size (* operation error)");
-    }
     std::vector<T> x(width);
     for(int i = 0; i< width;i++){
         x[i] = static_cast<T>(0);
