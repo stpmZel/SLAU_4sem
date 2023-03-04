@@ -24,13 +24,13 @@ int main(){
     csr_matrix<double> A(3, 3, DOK);
 
     double t_step = 2./(10.302*10000000.);
-    double current_t = 0.00001 + t_step*1000;
+    double current_t = 0.000000000001 + t_step*100000;
 
     std::ofstream out;          // поток для записи
     out.open("hello2.txt"); // окрываем файл для записи
 
 
-    for(int i = 1000; i < 1500; i++){
+    for(int i = 0; i < 100; i++){
             out << FPI_for_count(A, b , x, std::pow(10, -12),  current_t) << std::endl;
         current_t += t_step;
     }

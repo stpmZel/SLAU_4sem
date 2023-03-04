@@ -31,10 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="6">
-      <change afterPath="$PROJECT_DIR$/solvers_data.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CSR_matrix_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CSR_matrix_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solvers_data.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solvers_data.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +92,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB_2\SLAU_4sem\work_1" />
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB\tests" />
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB\src" />
     </key>
@@ -241,7 +240,7 @@
       <workItem from="1676936300282" duration="2848000" />
       <workItem from="1677542121642" duration="4536000" />
       <workItem from="1677623310299" duration="28416000" />
-      <workItem from="1677961751052" duration="1589000" />
+      <workItem from="1677961751052" duration="6838000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1675900410687</created>
@@ -313,7 +312,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677714255833</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="6">
+      <created>1677963536259</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677963536259</updated>
+    </task>
+    <task id="LOCAL-00012" summary="6">
+      <created>1677963600432</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677963600432</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
