@@ -20,6 +20,8 @@
       <config projectName="SLAU_LIB" targetName="DNC_matrix_test" />
       <config projectName="SLAU_LIB" targetName="gmock_main" />
       <config projectName="SLAU_LIB" targetName="gtest" />
+      <config projectName="SLAU_LIB" targetName="CSR_paresers_testing" />
+      <config projectName="SLAU_LIB" targetName="main" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -29,9 +31,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="6">
-      <change afterPath="$PROJECT_DIR$/src/DNC_matrix.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solvers_data.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSR_matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSR_matrix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/CSR_matrix_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CSR_matrix_test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +98,12 @@
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.HOUSEHOLDER.DECOMPOSITION_SMALL">
+  <component name="RunManager" selected="CMake Application.main">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in pass_method_lib_test.cc" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="SLAU_LIB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="SLAU_LIB" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/pass_method_lib_test/pass_method_lib_test.cc)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -120,13 +128,19 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CSR_paresers_testing" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="CSR_paresers_testing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="CSR_paresers_testing" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DNC_matrix_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="DNC_matrix_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="DNC_matrix_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HOUSEHOLDER.DECOMPOSITION_SMALL" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="housholder_test" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="housholder_test" TEST_CLASS="HOUSEHOLDER" TEST_METHOD="DECOMPOSITION_SMALL" TEST_MODE="SUITE_TEST">
+    <configuration name="HOUSEHOLDER.DECOMPOSITION_SMALL" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="housholder_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="housholder_test" TEST_CLASS="HOUSEHOLDER" TEST_METHOD="DECOMPOSITION_SMALL" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -146,11 +160,6 @@
     </configuration>
     <configuration name="SLAU_LIB" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="gmock" CONFIG_NAME="Debug">
       <method v="2">
@@ -172,7 +181,12 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="housholder_test" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="housholder_test" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="housholder_test">
+    <configuration name="housholder_test" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="housholder_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="housholder_test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="main">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -182,11 +196,13 @@
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CMake Application.main" />
       <item itemvalue="CMake Application.housholder_test" />
       <item itemvalue="CMake Debug.SLAU_LIB" />
-      <item itemvalue="Google Test.CSR_matrix_test" />
-      <item itemvalue="Google Test.DNC_matrix_test" />
       <item itemvalue="Google Test.housholder_test" />
+      <item itemvalue="Google Test.CSR_matrix_test" />
+      <item itemvalue="Google Test.CSR_paresers_testing" />
+      <item itemvalue="Google Test.DNC_matrix_test" />
       <item itemvalue="Google Test.All in pass_method_lib_test.cpp (1)" />
       <item itemvalue="Google Test.PassageSimpleTest._3x3_test" />
       <item itemvalue="Google Test.HOUSEHOLDER.DECOMPOSITION_SMALL" />
@@ -224,7 +240,8 @@
       <workItem from="1676813600149" duration="21318000" />
       <workItem from="1676936300282" duration="2848000" />
       <workItem from="1677542121642" duration="4536000" />
-      <workItem from="1677623310299" duration="19351000" />
+      <workItem from="1677623310299" duration="28416000" />
+      <workItem from="1677961751052" duration="1589000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1675900410687</created>
@@ -282,7 +299,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676936546751</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="6">
+      <created>1677714196801</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677714196801</updated>
+    </task>
+    <task id="LOCAL-00010" summary="6">
+      <created>1677714255833</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1677714255833</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

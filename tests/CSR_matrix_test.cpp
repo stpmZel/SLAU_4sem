@@ -53,8 +53,6 @@ TEST(CSR_MATRIX_TEST,get_element_test){
 
     ASSERT_DOUBLE_EQ(A(1,2), matrix[1][2]);
     ASSERT_DOUBLE_EQ(A(0, 0), static_cast<double>(0));
-
-
-//    std::vector<double> bad_vector = {1.};
-//    std::vector<double> bad_answer = A*bad_vector;
 }
+
+
