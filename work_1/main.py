@@ -12,7 +12,7 @@ n3 = np.array([float(item) for item in (open("n3.txt", "r+"))])
 
 fig, ax = plt.subplots(figsize=(8, 5), dpi=150)
 
-fig.suptitle("Dependence of th logarithm of residual on the number of iterations",
+fig.suptitle("log(t) от n",
              fontsize='xx-large')
 
 plt.grid(True)
