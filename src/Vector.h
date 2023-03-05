@@ -9,6 +9,13 @@
 #include <vector>
 #include <cmath>
 
+template<typename T>
+T scal(const std::vector<T> &lhs, const std::vector<T> &rhs)
+{
+    T sum = 0;
+    for(int i = 0; i < lhs.size(); i ++) sum += lhs[i] * rhs[i];
+    return sum;
+}
 
 template<typename T>
 std::vector<T> operator+(const std::vector<T> &lhs, const std::vector<T> &rhs) {
