@@ -34,9 +34,24 @@ csr_matrix(int Height, int Width, const std::vector<point<T>>& DOK);
 T operator()(int i,int j);
 
 std::vector<T> operator*(const std::vector<T> &b);
+csr_matrix<T> operator*(const csr_matrix<T> &b);
+csr_matrix<T> operator+(const csr_matrix<T> &b);
+csr_matrix<T> operator-(const csr_matrix<T> &b);
 
-    int height;
-    int width;
+[[nodiscard]] T get_value(int i) const {
+        return values[i];
+};
+
+[[nodiscard]] int get_col(int i) const {
+        return col[i];
+};
+
+[[nodiscard]] int get_row(int i) const {
+        return str_sum[i];
+}
+
+int height;
+int width;
 private:
 
     std::vector<int> str_sum;
@@ -103,6 +118,51 @@ std::vector<T> csr_matrix<T>::operator*(const std::vector<T> &b){
         }
     }
     return x;
+}
+
+template<typename T>
+csr_matrix<T> csr_matrix<T>::operator*(const csr_matrix<T> &b)
+{
+    std::vector<point<T>> points;
+    points.reserve(height * b.width);
+    for (int i = 0; i < height; i++) {
+        for (int k = 0; k < b.w_; k++) {
+            T sum = static_cast<T>(0);
+            for (int j = 0; j < width; j++) sum += (*this)(i, j) * b(j, k);
+            if(sum != 0) points.push_back({i, k, sum});
+        }
+    }
+    return csr_matrix<T>{height, b.width, points};
+}
+template<typename T>
+csr_matrix<T> csr_matrix<T>::operator+(const csr_matrix<T> &b) {
+    std::vector<point<T>> points;
+    points.reserve(height * width);
+    for (int i = 0; i < height; i++) {
+        for(int j = 0; j < width; j ++)
+        {
+            if((*this)(i, j) + b(i, j) != 0) points.push_back({i, j, (*this)(i, j) + b(i, j)});
+        }
+    }
+    return csr_matrix<T>{height, width, points};
+}
+template<typename T>
+csr_matrix<T> csr_matrix<T>::operator-(const csr_matrix<T> &b) {
+    std::vector<point<T>> points;
+    points.reserve(height * width);
+    for (int i = 0; i < height; i++) {
+        for(int j = 0; j < width; j ++)
+        {
+            if((*this)(i, j) - b(i, j) != 0) points.push_back({i, j, (*this)(i, j) - b(i, j)});
+        }
+    }
+    return csr_matrix<T>{height, width, points};
+}
+
+template<typename T>
+bool stop_check(const csr_matrix<T> &A, const std::vector<T> &x, const std::vector<T> &b, T tolerance) {
+    std::vector<T> res = A * x - b;
+    return norm(res) < tolerance;
 }
 
 
