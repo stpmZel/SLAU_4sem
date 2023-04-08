@@ -32,12 +32,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="kr update">
-      <change afterPath="$PROJECT_DIR$/KR_2/readme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KR_2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/KR_2/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSR_solver.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSR_solver.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SOR_and_SSOR.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/SOR_and_SSOR.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bundeled_gradients.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/bundeled_gradients.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680979552523</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="kr update">
+      <created>1680984929304</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680984929304</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
