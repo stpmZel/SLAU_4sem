@@ -37,13 +37,14 @@ std::vector<int> t_distribution(int n) {
 }
 
 template<typename T>
-std::vector<T> FPI(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x, T t, T tau) {
+std::vector<T> FPI(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x0, T t, T tau) {
+    std::vector<T> x = x0;
     std::vector<T> x_1 = x;
-//    std::ofstream out;
-//    std::ofstream out_2;
-//    out.open("f1.txt");
-//    out_2.open("n1.txt");
-//    int counter = 0;
+    std::ofstream out;
+    std::ofstream out_2;
+    out.open("2.txt");
+    out_2.open("n2.txt");
+    int counter = 0;
     std::vector<T> ret = A * x - b;
     while (stop(A, x, b, t)) {
         x = x_1;
@@ -53,9 +54,9 @@ std::vector<T> FPI(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x, T t, 
             x_1[i] = sum;
         }
         ret = A * x_1 - b;
-//        counter++;
-//        out << N(ret) << std::endl;
-//        out_2 << counter << std::endl;
+        counter++;
+        out << N(ret) << std::endl;
+        out_2 << counter << std::endl;
     }
 //    out.close();
 //    out_2.close();
@@ -82,11 +83,20 @@ std::vector<T> FPI_accelerated_ch(const csr_matrix<T> &A, const std::vector<T> &
     std::vector<T> x = x_0;
     std::vector<T> x_1 = x;
     std::vector<T> ch_sol = FPI_cheb(sol, t_dist, lam_max, lam_min);
-
+    std::ofstream out_8;
+    std::ofstream out_9;
+    out_8.open("3.txt");
+    out_9.open("n3.txt");
+    int counter = 0;
     int count = 0;
     while (stop(A, x_1, b, t)) {
         x = x_1;
         x_1 = x - (A * x - b) * ch_sol[count % iterations];
+        count++;
+
+        counter++;
+        out_8 << N(A * x - b) << std::endl;
+        out_9 << counter << std::endl;
     }
     return x_1;
 }
@@ -175,6 +185,13 @@ std::vector<T> Gaus_Zeidel(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &
 template<typename T>
 std::vector<T> Sym_Gaus_Zeidel(const csr_matrix<T> &A, const std::vector<T> &b, const std::vector<T> &x_0, T t) {
     std::vector<T> x = x_0;
+
+    std::ofstream out_3;
+    std::ofstream out_4;
+    out_3.open("Sym.txt");
+    out_4.open("n4.txt");
+    int counter = 0;
+
     while (stop(A, x, b, t)) {
         for (int i = 0; i < x.size(); i++) {
             T sum = b[i];
@@ -192,6 +209,11 @@ std::vector<T> Sym_Gaus_Zeidel(const csr_matrix<T> &A, const std::vector<T> &b, 
                     sum -= A.get_value(A.get_row(i) + j) * x[A.get_col(A.get_row(i) + j)];
             x[i] = sum / A(i, i);
         }
+
+        counter++;
+        out_3 << N(A*x - b) << std::endl;
+        out_4 << counter << std::endl;
+
     }
     return x;
 }

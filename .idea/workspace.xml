@@ -14,15 +14,15 @@
       <config projectName="SLAU_LIB" targetName="CSR_matrix_test" />
       <config projectName="SLAU_LIB" targetName="pass_method_lib_test" />
       <config projectName="SLAU_LIB" targetName="housholder_test" />
-      <config projectName="SLAU_LIB" targetName="gtest_main" />
       <config projectName="SLAU_LIB" targetName="SLAU_LIB" />
-      <config projectName="SLAU_LIB" targetName="gmock" />
       <config projectName="SLAU_LIB" targetName="DNC_matrix_test" />
-      <config projectName="SLAU_LIB" targetName="gmock_main" />
       <config projectName="SLAU_LIB" targetName="gtest" />
+      <config projectName="SLAU_LIB" targetName="test_sym_accel" />
+      <config projectName="SLAU_LIB" targetName="gtest_main" />
+      <config projectName="SLAU_LIB" targetName="gmock" />
+      <config projectName="SLAU_LIB" targetName="gmock_main" />
       <config projectName="SLAU_LIB" targetName="CSR_paresers_testing" />
       <config projectName="SLAU_LIB" targetName="main" />
-      <config projectName="SLAU_LIB" targetName="test_sym_accel" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -32,11 +32,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="663c9761-8362-4634-8ba6-0c41727a640a" name="Changes" comment="6">
+      <change afterPath="$PROJECT_DIR$/src/bundeled_gradients.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KR_1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/KR_2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KR_1/n1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KR_1/n1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSR_matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSR_matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CSR_solver.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSR_solver.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SOR_and_SSOR.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/SOR_and_SSOR.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vector.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,30 +107,26 @@
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB_2\SLAU_4sem\KR_1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB_2\SLAU_4sem\KR_2" />
+      <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB_2\SLAU_4sem\KR_1" />
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB_2\SLAU_4sem\work_1" />
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB\tests" />
       <recent name="\\wsl$\Ubuntu-22.04\home\stepan\IT_STUDY\SLAU_LIB\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.test_sym_accel">
+  <component name="RunManager" selected="CMake Application.main">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in pass_method_lib_test.cc" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="SLAU_LIB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="SLAU_LIB" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/pass_method_lib_test/pass_method_lib_test.cc)" TEST_MODE="PATTERN">
+    <configuration name="All in pass_method_lib_test.cc" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="SLAU_LIB" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="SLAU_LIB" TEST_PATTERN="all-tests(file:////wsl.localhost/Ubuntu-22.04/home/stepan/IT_STUDY/SLAU_LIB_2/SLAU_4sem/pass_method_lib_test/pass_method_lib_test.cc)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in pass_method_lib_test.cpp (1)" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/tests/pass_method_lib_test.cpp)" TEST_MODE="PATTERN">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in pass_method_lib_test.cpp" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="pass_method_lib_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="pass_method_lib_test" TEST_PATTERN="all-tests(file://$PROJECT_DIR$/pass_method_lib_test/pass_method_lib_test.cpp)" TEST_MODE="PATTERN">
+    <configuration name="All in pass_method_lib_test.cpp (1)" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" TEST_PATTERN="all-tests(file:////wsl.localhost/Ubuntu-22.04/home/stepan/IT_STUDY/SLAU_LIB_2/SLAU_4sem/tests/pass_method_lib_test.cpp)" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -208,6 +207,33 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test_sym_accel" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SLAU_LIB" TARGET_NAME="test_sym_accel" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SLAU_LIB" RUN_TARGET_NAME="test_sym_accel">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/KR_2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KR_2/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
@@ -215,27 +241,19 @@
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CMake Application.main" />
       <item itemvalue="CMake Application.housholder_test" />
+      <item itemvalue="CMake Application.test_sym_accel" />
       <item itemvalue="CMake Debug.SLAU_LIB" />
-      <item itemvalue="Google Test.housholder_test" />
-      <item itemvalue="Google Test.test_sym_accel" />
+      <item itemvalue="Google Test.All in pass_method_lib_test.cpp (1)" />
       <item itemvalue="Google Test.CSR_matrix_test" />
       <item itemvalue="Google Test.CSR_paresers_testing" />
       <item itemvalue="Google Test.DNC_matrix_test" />
-      <item itemvalue="Google Test.All in pass_method_lib_test.cpp (1)" />
       <item itemvalue="Google Test.PassageSimpleTest._3x3_test" />
-      <item itemvalue="Google Test.HOUSEHOLDER.DECOMPOSITION_SMALL" />
+      <item itemvalue="Google Test.housholder_test" />
+      <item itemvalue="Google Test.test_sym_accel" />
       <item itemvalue="Google Test.All in pass_method_lib_test.cc" />
-      <item itemvalue="Google Test.All in pass_method_lib_test.cpp" />
+      <item itemvalue="Google Test.HOUSEHOLDER.DECOMPOSITION_SMALL" />
+      <item itemvalue="Python.main" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Google Test.HOUSEHOLDER.DECOMPOSITION_SMALL" />
-        <item itemvalue="CMake Application.housholder_test" />
-        <item itemvalue="CMake Debug.SLAU_LIB" />
-        <item itemvalue="Google Test.All in pass_method_lib_test.cc" />
-        <item itemvalue="Google Test.All in pass_method_lib_test.cpp" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -261,7 +279,10 @@
       <workItem from="1677623310299" duration="28416000" />
       <workItem from="1677961751052" duration="13935000" />
       <workItem from="1679347974202" duration="373000" />
-      <workItem from="1680816060719" duration="15624000" />
+      <workItem from="1680816060719" duration="15756000" />
+      <workItem from="1680940494325" duration="2540000" />
+      <workItem from="1680944735514" duration="9931000" />
+      <workItem from="1680973917208" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <created>1675900410687</created>
@@ -396,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680909962844</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="6">
+      <created>1680940349683</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680940349683</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

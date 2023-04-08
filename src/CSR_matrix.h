@@ -32,23 +32,22 @@ public:
 
 csr_matrix(int Height, int Width, const std::vector<point<T>>& DOK);
 
-T operator()(int i,int j);
+T operator()(int i,int j) const;
 
-std::vector<T> operator*(const std::vector<T> &b);
-
+std::vector<T> operator*(const std::vector<T> &b) const;
 csr_matrix<T> operator*(const csr_matrix<T> &b);
 csr_matrix<T> operator+(const csr_matrix<T> &b);
 csr_matrix<T> operator-(const csr_matrix<T> &b);
 
-[[nodiscard]] T get_value(int i) const {
+T get_value(int i) const {
         return values[i];
 };
 
-[[nodiscard]] int get_col(int i) const {
+int get_col(int i) const {
         return col[i];
 };
 
-[[nodiscard]] int get_row(int i) const {
+int get_row(int i) const {
         return str_sum[i];
 }
 
@@ -95,7 +94,7 @@ csr_matrix<T>::csr_matrix(int Height, int Width, const std::vector<point<T>> &DO
 }
 
 template<typename T>
-T csr_matrix<T>::operator()(int i,int j){
+T csr_matrix<T>::operator()(int i,int j) const{
     for(int l = str_sum[i]; l < str_sum[i+1]; l++){
         if(col[l] == j){
             return values[l];
@@ -106,7 +105,7 @@ T csr_matrix<T>::operator()(int i,int j){
 
 
 template<typename T>
-std::vector<T> csr_matrix<T>::operator*(const std::vector<T> &b){
+std::vector<T> csr_matrix<T>::operator*(const std::vector<T> &b) const{
     std::vector<T> x(width);
     for(int i = 0; i< width;i++){
         x[i] = static_cast<T>(0);
