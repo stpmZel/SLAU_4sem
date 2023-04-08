@@ -38,14 +38,14 @@ std::vector<int> t_distribution(int n) {
 
 template<typename T>
 std::vector<T> FPI(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x, T t, T tau) {
-    std::vector x_1 = x;
+    std::vector<T> x_1 = x;
 //    std::ofstream out;
 //    std::ofstream out_2;
 //    out.open("f1.txt");
 //    out_2.open("n1.txt");
 //    int counter = 0;
     std::vector<T> ret = A * x - b;
-    while (N(ret) > t) {
+    while (stop(A, x, b, t)) {
         x = x_1;
         for (int i = 0; i < x.size(); i++) {
             T sum = b[i] * tau + x_1[i];
@@ -81,10 +81,10 @@ std::vector<T> FPI_accelerated_ch(const csr_matrix<T> &A, const std::vector<T> &
     std::vector<int> t_dist = t_distribution(iterations);
     std::vector<T> x = x_0;
     std::vector<T> x_1 = x;
-    std::vector<T> ch_sol = MPI_Cheb_solutions(sol, t_dist, lam_max, lam_min);
+    std::vector<T> ch_sol = FPI_cheb(sol, t_dist, lam_max, lam_min);
 
     int count = 0;
-    while (!stop_check(A, x_1, b, t)) {
+    while (stop(A, x_1, b, t)) {
         x = x_1;
         x_1 = x - (A * x - b) * ch_sol[count % iterations];
     }
@@ -115,11 +115,11 @@ std::vector<T> FPI_accelerated_ch(const csr_matrix<T> &A, const std::vector<T> &
 template<typename T>
 std::vector<T> Jacobi(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x, T t) {
     std::vector x_1 = x;
-    std::ofstream out_3;
-    std::ofstream out_4;
-    out_3.open("f2.txt");
-    out_4.open("n2.txt");
-    int counter = 0;
+//    std::ofstream out_3;
+//    std::ofstream out_4;
+//    out_3.open("f2.txt");
+//    out_4.open("n2.txt");
+//    int counter = 0;
     std::vector<T> ret = A * x - b;
     std::vector<T> x0 = x;
     while (N(ret) > t) {
@@ -130,13 +130,13 @@ std::vector<T> Jacobi(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x, T 
             x_1[i] = sum / A(i, i);
         }
         ret = A * x_1 - b;
-        counter++;
-        out_3 << N(ret) << std::endl;
-        out_4 << counter << std::endl;
+//        counter++;
+//        out_3 << N(ret) << std::endl;
+//        out_4 << counter << std::endl;
 
     }
-    out_3.close();
-    out_4.close();
+//    out_3.close();
+//    out_4.close();
     return x_1;
 }
 
@@ -149,13 +149,13 @@ std::vector<T> Jacobi(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x, T 
 
 template<typename T>
 std::vector<T> Gaus_Zeidel(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x, T t) {
-    std::vector x_1 = x;
+    std::vector<T> x_1 = x;
     std::vector<T> ret = A * x - b;
-    std::ofstream out_5;
-    std::ofstream out_6;
-    out_5.open("f3.txt");
-    out_6.open("n3.txt");
-    int counter = 0;
+//    std::ofstream out_5;
+//    std::ofstream out_6;
+//    out_5.open("f3.txt");
+//    out_6.open("n3.txt");
+//    int counter = 0;
     while (N(ret) > t) {
         for (int i = 0; i < x.size(); i++) {
             T sum = b[i];
@@ -163,14 +163,88 @@ std::vector<T> Gaus_Zeidel(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &
             x_1[i] = sum / A(i, i);
         }
         ret = A * x_1 - b;
-        counter++;
-        out_5 << N(ret) << std::endl;
-        out_6 << counter << std::endl;
+//        counter++;
+//        out_5 << N(ret) << std::endl;
+//        out_6 << counter << std::endl;
     }
-    out_5.close();
-    out_6.close();
+//    out_5.close();
+//    out_6.close();
     return x_1;
 }
+
+template<typename T>
+std::vector<T> Sym_Gaus_Zeidel(const csr_matrix<T> &A, const std::vector<T> &b, const std::vector<T> &x_0, T t) {
+    std::vector<T> x = x_0;
+    while (stop(A, x, b, t)) {
+        for (int i = 0; i < x.size(); i++) {
+            T sum = b[i];
+
+            for (int j = 0; j < A.get_row(i + 1) - A.get_row(i); j++)
+                if (i != j)
+                    sum -= A.get_value(A.get_row(i) + j) * x[A.get_col(A.get_row(i) + j)];
+            x[i] = sum / A(i, i);
+        }
+
+        for (int i = x.size() - 1; i > 0; i--) {
+            T sum = b[i];
+            for (int j = 0; j < A.get_row(i + 1) - A.get_row(i); j++)
+                if (i != j)
+                    sum -= A.get_value(A.get_row(i) + j) * x[A.get_col(A.get_row(i) + j)];
+            x[i] = sum / A(i, i);
+        }
+    }
+    return x;
+}
+
+
+template<typename T>
+std::vector<T> Gaus_Zeidel_Sym_it(const csr_matrix<T> &A, const std::vector<T> &b, const std::vector<T> x_0) {
+    std::vector<T> x = x_0;
+    for (int i = 0; i < x.size(); i++) {
+        T sum = b[i];
+
+        for (int j = 0; j < A.get_row(i + 1) - A.get_row(i); j++)
+            if (i != j)
+                sum -= A.get_value(A.get_row(i) + j) * x[A.get_col(A.get_row(i) + j)];
+        x[i] = sum / A(i, i);
+    }
+
+    for (int i = x.size() - 1; i >= 0; i--) {
+        T sum = b[i];
+        for (int j = 0; j < A.get_row(i + 1) - A.get_row(i); j++)
+            if (i != j)
+                sum -= A.get_value(A.get_row(i) + j) * x[A.get_col(A.get_row(i) + j)];
+        x[i] = sum / A(i, i);
+    }
+    return x;
+}
+
+template<typename T>
+std::vector<T> Gaus_Zeidel_accelerated(const csr_matrix<T> &A, const std::vector<T> &b, const std::vector<T> &x, T r, T t) {
+    std::vector<T> x0 = x;
+    std::vector<T> x1 = Gaus_Zeidel_Sym_it(A, b, x0);
+    std::vector<T> x2 = Gaus_Zeidel_Sym_it(A, b, x1);
+    x1 = x2;
+
+    T m0 = 1;
+    T m1 = 1 / r;
+    T m2 = 2 * m1 / r - m0;
+    int count = 0;
+
+    while (stop(A, x2, b, t)) {
+        x2 = x1 * (2 * m1 / (r * m2)) - x0 * (m0 / m2);
+        x0 = x1;
+        x1 = Gaus_Zeidel_Sym_it(A, b, x2);
+        m0 = m1;
+        m1 = m2;
+        m2 = 2 * m1 / r - m0;
+        count++;
+    }
+
+    return x2;
+
+}
+
 
 
 

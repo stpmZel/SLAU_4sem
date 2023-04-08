@@ -8,6 +8,7 @@
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
+#include "Vector.h"
 
 template<typename T>
 struct point{
@@ -34,6 +35,7 @@ csr_matrix(int Height, int Width, const std::vector<point<T>>& DOK);
 T operator()(int i,int j);
 
 std::vector<T> operator*(const std::vector<T> &b);
+
 csr_matrix<T> operator*(const csr_matrix<T> &b);
 csr_matrix<T> operator+(const csr_matrix<T> &b);
 csr_matrix<T> operator-(const csr_matrix<T> &b);
@@ -160,9 +162,9 @@ csr_matrix<T> csr_matrix<T>::operator-(const csr_matrix<T> &b) {
 }
 
 template<typename T>
-bool stop_check(const csr_matrix<T> &A, const std::vector<T> &x, const std::vector<T> &b, T tolerance) {
+bool stop(const csr_matrix<T> &A, const std::vector<T> &x, const std::vector<T> &b, T t) {
     std::vector<T> res = A * x - b;
-    return norm(res) < tolerance;
+    return N(res) >= t;
 }
 
 

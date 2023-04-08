@@ -17,11 +17,20 @@ T scal(const std::vector<T> &lhs, const std::vector<T> &rhs)
     return sum;
 }
 
+
 template<typename T>
 std::vector<T> operator+(const std::vector<T> &lhs, const std::vector<T> &rhs) {
     std::vector<T> res_;
     res_.reserve(lhs.size());
     for (int i = 0; i < lhs.size(); i++) res_.push_back(lhs[i] + rhs[i]);
+    return res_;
+}
+
+template<typename T>
+std::vector<T> operator*(const std::vector<T> &lhs, const double &rhs) {
+    std::vector<T> res_;
+    res_.reserve(lhs.size());
+    for (int i = 0; i < lhs.size(); i++) res_.push_back(lhs[i] * rhs);
     return res_;
 }
 
