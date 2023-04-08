@@ -29,7 +29,7 @@ std::vector<T> SSOR(const csr_matrix<T> &A, const std::vector<T> &b, const std::
     //
     std::ofstream out_3;
     std::ofstream out_4;
-    out_3.open("Sym.txt");
+    out_3.open("x_y4.txt");
     out_4.open("n4.txt");
     int counter = 0;
     //
@@ -53,7 +53,7 @@ std::vector<T> SSOR(const csr_matrix<T> &A, const std::vector<T> &b, const std::
 
         //
         counter++;
-        out_3 << N(A*x - b) << std::endl;
+        out_3 << x[0] << " " << x[3] << std::endl;
         out_4 << counter << std::endl;
         //
 

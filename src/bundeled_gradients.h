@@ -15,6 +15,11 @@ std::vector<T> Conjaguate_Gradient(const csr_matrix<T> &A, const std::vector<T> 
     std::vector<T> d = r;
     T a, beta;
 
+    std::ofstream out_5;
+
+    out_5.open("x_y5.txt");
+
+
 
     while(stop(A, x, b, t))
     {
@@ -24,6 +29,7 @@ std::vector<T> Conjaguate_Gradient(const csr_matrix<T> &A, const std::vector<T> 
         beta = scal(r1, r1) / scal(r, r);
         r = r1;
         d = r1 + d * beta;
+        out_5 << x[0] << " " << x[3] << std::endl;
     }
     return x;
 }

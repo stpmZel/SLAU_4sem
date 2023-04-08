@@ -27,15 +27,15 @@ plt.xticks(np.arange(-1, 3500, 5))
 ax.xaxis.set_major_locator(ticker.MultipleLocator(5000))
 
 
-# ax.plot(n1, np.log(f1), label='Градиентный спуск с tau = 1 / λmax;')
-# ax.plot(n2, np.log(f2), label='Градиентный спуск с оптимальным параметром;')
-# ax.plot(n3, np.log(f3), label='Градиентный спуск с ускорением Чебышева')
-# ax.plot(n4, np.log(f4), label='Симметризованны1 метод (SSOR)')
+ax.plot(n1, np.log(f1), label='Градиентный спуск с tau = 1 / λmax;')
+ax.plot(n2, np.log(f2), label='Градиентный спуск с оптимальным параметром;')
+ax.plot(n3, np.log(f3), label='Градиентный спуск с ускорением Чебышева')
+ax.plot(n4, np.log(f4), label='Симметризованны1 метод (SSOR)')
 
-ax.plot(lam, time, label='время от delta_lam')
+# ax.plot(lam, time, label='время от delta_lam')
 
 
 ax.legend(loc='best', fontsize=12)
-plt.xlabel('dela_lam', fontsize=14)
-plt.savefig("plot2.png")
+plt.xlabel('n', fontsize=14)
+plt.savefig("plot1_1.png")
 plt.show()

@@ -11,18 +11,17 @@
 
 template<typename T>
 std::vector<T> sol_chebyshev_polynom(long int n){
-    T Cos_b = std::cos(std::atan(1)*4 / (2 * static_cast<T>(n)));
-    T Sin_b = std::sqrt(1 - std::pow(Cos_b, 2));
-    T Sin_a = Cos_b * Sin_b * 2;
-    T Cos_a = std::pow(Cos_b, 2) - std::pow(Sin_b, 2);
-    std::vector<T> sol;
-    sol.resize(n);
-    sol[0] = Cos_b;
-    for (auto i = 0ul; i + 1 < n; i++) {
-        sol[i + 1] = sol[i] * Cos_a - Sin_b * Sin_a;
-        Sin_b = sol[i] * Sin_a + Sin_b * Cos_a;
+    std::vector<T> solutions_(n);
+    T sina = std::sin(M_PI / static_cast<T>(n));
+    T cosa = std::cos(M_PI / static_cast<T>(n));
+    T sinb = std::sin(M_PI / (2 * static_cast<T>(n)));
+
+    solutions_[0] = std::cos(M_PI / (2 * static_cast<T>(n)));
+    for (int i = 1; i < n; i++) {
+        solutions_[i] = solutions_[i - 1] * cosa - sinb * sina;
+        sinb = solutions_[i - 1] * sina + sinb * cosa;
     }
-    return sol;
+    return solutions_;
 }
 
 std::vector<int> t_distribution(int n) {
@@ -42,8 +41,8 @@ std::vector<T> FPI(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x0, T t,
     std::vector<T> x_1 = x;
     std::ofstream out;
     std::ofstream out_2;
-    out.open("2.txt");
-    out_2.open("n2.txt");
+    out.open("x_y2.txt");
+    out_2.open("n1.txt");
     int counter = 0;
     std::vector<T> ret = A * x - b;
     while (stop(A, x, b, t)) {
@@ -55,7 +54,7 @@ std::vector<T> FPI(csr_matrix<T> &A, std::vector<T> &b, std::vector<T> &x0, T t,
         }
         ret = A * x_1 - b;
         counter++;
-        out << N(ret) << std::endl;
+        out << x_1[0] << " " << x_1[3] << std::endl;
         out_2 << counter << std::endl;
     }
 //    out.close();
@@ -83,11 +82,16 @@ std::vector<T> FPI_accelerated_ch(const csr_matrix<T> &A, const std::vector<T> &
     std::vector<T> x = x_0;
     std::vector<T> x_1 = x;
     std::vector<T> ch_sol = FPI_cheb(sol, t_dist, lam_max, lam_min);
+
+
+
     std::ofstream out_8;
     std::ofstream out_9;
     out_8.open("3.txt");
     out_9.open("n3.txt");
     int counter = 0;
+
+
     int count = 0;
     while (stop(A, x_1, b, t)) {
         x = x_1;
